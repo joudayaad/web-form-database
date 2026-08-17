@@ -9,12 +9,12 @@ if (isset($_POST['submit'])) {
     $name = $_POST['name'];
     $age = $_POST['age'];
 
-    $stmt = $conn->prepare("INSERT INTO users (name, age, status) VALUES (?, ?, 0)");
+    $stmt = $conn->prepare("INSERT INTO user (name, age, status) VALUES (?, ?, 0)");
     $stmt->bind_param("si", $name, $age);
     $stmt->execute();
 }
 
-$result = $conn->query("SELECT * FROM users");
+$result = $conn->query("SELECT * FROM user");
 ?>
 
 <!DOCTYPE html>
